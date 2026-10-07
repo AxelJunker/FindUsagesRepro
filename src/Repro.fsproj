@@ -6,8 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Runner.fs" />
-        <Compile Include="RunnerJob.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 </Project>

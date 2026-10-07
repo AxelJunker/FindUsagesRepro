@@ -1,9 +1,22 @@
 module Repro.Program
 
+type Job = int -> int
+
+// Find Usages on each of these functions.
+
+// Doesn't work
+let withParamAbbrev (_: string) : Job = fun _ -> 1
+
+// Works
+let withParamExpanded (_: string) : int -> int = fun _ -> 1
+
+// Works
+let noParamAbbrev: Job = fun _ -> 1
+
 [<EntryPoint>]
 let main _ =
-    Runner.newJob (RunnerJob.withParamAbbrev "x") |> ignore
-    Runner.newJob (RunnerJob.withParamExpanded "x") |> ignore
-    Runner.newJob RunnerJob.noParamAbbrev |> ignore
+    withParamAbbrev "x" |> ignore
+    withParamExpanded "x" |> ignore
+    noParamAbbrev |> ignore
 
     0
