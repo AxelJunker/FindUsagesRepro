@@ -1,0 +1,6 @@
+bin
+obj
+out
+.dotnet-build-output/
+.DS_Store
+.idea

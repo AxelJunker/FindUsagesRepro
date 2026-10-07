@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <GenerateProgramFile>false</GenerateProgramFile>
+    </PropertyGroup>
+
+    <!-- Same as InsurelloSweden/services/Defaults.targets -->
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <ParallelCompilation>true</ParallelCompilation>
+        <Deterministic>false</Deterministic>
+        <NoWarn>FS0075</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Runner.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="RunnerJob.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+</Project>
